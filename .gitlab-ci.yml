@@ -1,0 +1,44 @@
+stages:
+  - init
+  - finish
+
+.terraform:
+  before_script:
+    - schutzbot/ci_details.sh > ci-details-before-run
+  after_script:
+    - schutzbot/ci_details.sh > ci-details-after-run
+    - schutzbot/update_github_status.sh update
+  tags:
+    - terraform
+  artifacts:
+    paths:
+      - ci-details-before-run
+      - ci-details-after-run
+
+init:
+  stage: init
+  tags:
+    - shell
+  script:
+    - schutzbot/update_github_status.sh start
+  interruptible: true
+
+
+Manifests:
+  stage: test
+  extends: .terraform
+  script:
+    - schutzbot/deploy.sh
+    - sudo test/cases/manifest_tests
+  parallel:
+    matrix:
+      - RUNNER:
+          - aws/rhel-9.0-nightly-x86_64
+        INTERNAL_NETWORK: ["true"]
+
+finish:
+  stage: finish
+  tags:
+    - shell
+  script:
+    - schutzbot/update_github_status.sh finish

@@ -1,5 +1,6 @@
 stages:
   - init
+  - test
   - finish
 
 .terraform:

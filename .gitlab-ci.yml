@@ -71,3 +71,4 @@ finish:
     - shell
   script:
     - schutzbot/update_github_status.sh finish
+    - sudo tools/push-image-info

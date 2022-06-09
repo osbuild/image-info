@@ -31,6 +31,10 @@ Manifests:
   script:
     - schutzbot/deploy.sh
     - sudo test/cases/manifest_tests
+  artifacts:
+    when: always
+    paths:
+      - imis/
   parallel:
     matrix:
       - RUNNER:

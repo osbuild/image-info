@@ -459,6 +459,10 @@ def main():
     tests = list(load_tests("test/data/images"))
     tests = list(filter(make_filter(args), tests))
 
+    if not tests:
+        print(f" {RED}FAIL{RESET}: no tests to run")
+        return 1
+
     for t in tests:
         print(f"{t.id}", end="", flush=True)
 

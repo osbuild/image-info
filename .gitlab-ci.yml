@@ -42,6 +42,10 @@ Manifests:
     - schutzbot/deploy.sh
     - sudo tools/selinux-context.sh
     - sudo test/cases/manifest_tests
+  artifacts:
+    when: always
+    paths:
+      - imis/
   parallel:
     matrix:
       - RUNNER:

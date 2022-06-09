@@ -272,6 +272,11 @@ def build_image(test: TestCase, osb: OSBuild, args: argparse.Namespace) -> bool:
         return False
 
 
+def write_json(name, result, folder):
+    os.makedirs(folder, exist_ok=True)
+    with open(os.path.join(folder, f"{name}.json"), "w", encoding="utf-8") as f:
+        json.dump(result, f)
+
 # pylint: disable=[too-many-return-statements]
 def inspect_image(test: TestCase, imi: ImageInfo, args: argparse.Namespace) -> bool:
     if args.dry_run:
@@ -413,6 +418,12 @@ def main():
         type=os.path.abspath,
         default="/var/lib/osbuild/out",
         help="directory where result objects are stored")
+    parser.add_argument(
+        "--imi-output",
+        metavar="DIRECTORY",
+        type=os.path.abspath,
+        default="imis",
+        help="directory where produced image info JSON will be stored")
     parser.add_argument(
         "--arch",
         metavar="ARCHITECTURE",

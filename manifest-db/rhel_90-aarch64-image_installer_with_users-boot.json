@@ -7988,5 +7988,19 @@
       }
     }
   },
-  "image-info": null
+  "image-info": {
+    "bootloader": "unknown",
+    "image-format": {
+      "type": "raw"
+    },
+    "partition-table": null,
+    "partition-table-id": null,
+    "partitions": [
+      {
+        "fstype": "iso9660",
+        "label": "RHEL-9-0-0-BaseOS-aarch64",
+        "uuid": "2022-06-28-15-24-49-00"
+      }
+    ]
+  }
 }

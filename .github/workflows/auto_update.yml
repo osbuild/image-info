@@ -1,0 +1,36 @@
+name: Update DB
+
+on: workflow_dispatch
+
+jobs:
+  update_db:
+    name: "Update DB"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone composer
+        uses: actions/checkout@v3
+        with:
+          repository: osbuild/osbuild-composer
+          path: composer
+
+      - name: Checkout manifest-db
+        uses: actions/checkout@v3
+        with:
+          path: manifest-db
+
+      - name: Update DB
+        run: |
+          ./manifest-db/tools/import-image-tests --verbose composer/test/data/manifests/ manifest-db/manifest-db --manifest-only --db-ignore=manifest-db/db-ignore
+          echo "${{ secrets.PAT }}" > secret.txt
+          gh auth login --with-token < secret.txt
+          cd manifest-db
+          git config --local user.name "Thomas Lavocat"
+          git config --local user.email "tlavocat@redhat.com"
+          now=$(date '+%Y-%m-%d-%H%M%S')
+          branch_name="db-update$now"
+          git branch "$branch_name"
+          git checkout "$branch_name"
+          git add -A
+          git commit -m "db: update manifests from latest composer"
+          git push --set-upstream origin $branch_name
+          gh pr create --title "db update" --body "automated db update" -r lavocatt

@@ -1,0 +1,41 @@
+name: Update image-info un DB
+
+on:
+  workflow_run:
+    workflows: ["Trigger GitLab CI"]
+    types: [completed]
+
+jobs:
+  update_db:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    name: "Update image info in DB"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout manifest-db
+        uses: actions/checkout@v3
+        with:
+          path: manifest-db
+          ref: ${{ github.ref }}
+
+      - name: Fetch image infos
+        run: |
+          echo "${{ secrets.PAT }}" > secret.txt
+          gh auth login --with-token < secret.txt
+          cd manifest-db
+
+          pull_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+          current_sha=$(git rev-parse HEAD)
+          schutzbot_report=$(gh pr checks "$pull_number"| grep Schutzbot)
+          split_schutzbot_report=($schutzbot_report)
+          pipeline_url=echo ${split_schutzbot_report[-1]}
+          pipeline_id=$(echo "/$pipeline_url" | sed -e 's/\/.*\///g')
+
+          ./tools/ci_import --pipeline-id "$pipeline_id" --token  ${{secrets.GITLAB_TOKEN}} --verbose
+
+          git config --local user.name "Thomas Lavocat"
+          git config --local user.email "tlavocat@redhat.com"
+          git add -A
+          git commit -m "db: update image-info from pipeline $pipeline_id
+
+          ci_job: $pipeline_url
+          previous_commit: $current_sha" && git push --set-upstream origin $branch_name || echo "nothing to commit"

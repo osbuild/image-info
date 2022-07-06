@@ -4838,7 +4838,7 @@
             "options": {
               "filesystems": [
                 {
-                  "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+                  "uuid": "11111111-1111-1111-1111-111111111111",
                   "vfs_type": "ext4",
                   "path": "/boot",
                   "options": "defaults"
@@ -4863,7 +4863,7 @@
             "type": "org.osbuild.grub2",
             "options": {
               "root_fs_uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
-              "boot_fs_uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "boot_fs_uuid": "11111111-1111-1111-1111-111111111111",
               "saved_entry": "ffffffffffffffffffffffffffffffff-5.15.13-200.fc35.aarch64",
               "write_cmdline": false,
               "config": {
@@ -4946,7 +4946,7 @@
           {
             "type": "org.osbuild.mkfs.ext4",
             "options": {
-              "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "uuid": "11111111-1111-1111-1111-111111111111",
               "label": "boot"
             },
             "devices": {

@@ -9,7 +9,7 @@ The update workflow is made of 3 distinct steps:
 
 #### First step, triggering the CI
 
-The update workflow starts with a `Update DB` GitHub action that is manually
+The update workflow starts with an `Update DB` GitHub action that is manually
 triggered. This action imports a subset of the manifests from osbuild-composer,
 specifically those CI is able to build.
 
@@ -20,7 +20,7 @@ Once the import is done, a commit is created and pushed to [this GitLab reposito
 
 #### Second step, running the CI
 
-Using a gitlab `trigger token` the github action starts the CI with a
+Using a GitLab `trigger token` the GitHub action starts the CI with a
 different workflow than the one used to run the regression testing.
 
 A job for each architecture and distribution listed in

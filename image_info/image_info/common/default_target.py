@@ -1,7 +1,11 @@
 """
 environment
 """
-from attr import define
+try:
+    from attr import define, field
+except ImportError:
+    from attr import s as define
+    from attr import ib as field
 from image_info.utils.process import subprocess_check_output
 from image_info.report.common import Common
 
@@ -12,7 +16,7 @@ class DefaultTarget(Common):
     Default systemd target
     """
     flatten = True
-    default_target: str
+    default_target: str = field()
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

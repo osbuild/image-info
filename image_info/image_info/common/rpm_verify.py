@@ -4,7 +4,11 @@ Packages
 import os
 from typing import List, Dict
 import subprocess
-from attr import define
+try:
+    from attr import define, field
+except ImportError:
+    from attr import s as define
+    from attr import ib as field
 from image_info.report.common import Common
 
 
@@ -13,8 +17,8 @@ class RpmVerify(Common):
     """
     Read the output of 'rpm --verify'.
     """
-    changed: Dict
-    missing: List
+    changed: Dict = field()
+    missing: List = field()
 
     @classmethod
     def explore(cls, tree, is_ostree=False):

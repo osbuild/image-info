@@ -3,7 +3,11 @@ Configuration files
 """
 import contextlib
 from typing import Dict
-from attr import define
+try:
+    from attr import define, field
+except ImportError:
+    from attr import s as define
+    from attr import ib as field
 from image_info.report.common import Common
 
 
@@ -13,7 +17,7 @@ class Chrony(Common):
     Chrony
     """
     flatten = True
-    chrony: Dict
+    chrony: Dict = field()
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

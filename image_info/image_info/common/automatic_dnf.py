@@ -1,6 +1,7 @@
 """
 Configuration files
 """
+from typing import Dict
 from attr import define
 from image_info.report.common import Common
 from image_info.utils.files import _read_inifile_to_dict
@@ -12,7 +13,7 @@ class AutomaticDnf(Common):
     AutomaticDnf
     """
     flatten = True
-    _l_etc_l_dnf_l_automatic__conf: dict
+    _l_etc_l_dnf_l_automatic__conf: Dict
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

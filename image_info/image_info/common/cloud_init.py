@@ -2,6 +2,7 @@
 Configuration files
 """
 import contextlib
+from typing import Dict
 import yaml
 from attr import define
 from image_info.report.common import Common
@@ -15,7 +16,7 @@ class CloudInit(Common):
     CloudInit
     """
     flatten = True
-    cloud_init: dict
+    cloud_init: Dict
 
     @staticmethod
     def read_cloud_init_config(config_path):

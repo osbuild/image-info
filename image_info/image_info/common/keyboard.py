@@ -3,6 +3,7 @@ Configuration files
 """
 import re
 import contextlib
+from typing import Dict
 from attr import define
 from image_info.report.common import Common
 from image_info.utils.utils import parse_environment_vars
@@ -14,7 +15,7 @@ class Keyboard(Common):
     Keyboard
     """
     flatten = True
-    keyboard: dict
+    keyboard: Dict
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

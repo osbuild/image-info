@@ -5,6 +5,7 @@ import glob
 import re
 import contextlib
 import subprocess
+from typing import Dict
 from attr import define
 from image_info.utils.process import subprocess_check_output
 from image_info.utils.utils import parse_environment_vars
@@ -115,7 +116,7 @@ class Selinux(Common):
     Selinux
     """
     flatten = True
-    selinux: dict
+    selinux: Dict
 
     @classmethod
     def explore(cls, tree, is_ostree=False):

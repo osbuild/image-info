@@ -2,6 +2,7 @@
 Packages
 """
 import os
+from typing import List
 from attr import define
 from image_info.report.common import Common
 from image_info.utils.process import subprocess_check_output
@@ -13,7 +14,7 @@ class RpmNotInstalledDocs(Common):
     Read the output of 'rpm --verify'.
     """
     flatten = True
-    rpm_not_installed_docs: list
+    rpm_not_installed_docs: List
 
     @classmethod
     def explore(cls, tree, is_ostree=False):

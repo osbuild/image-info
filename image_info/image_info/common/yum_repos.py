@@ -1,6 +1,7 @@
 """
 Configuration files
 """
+from typing import Dict
 from attr import define
 from image_info.report.common import Common
 from image_info.utils.files import (
@@ -14,7 +15,7 @@ class YumRepos(Common):
     YumRepos
     """
     flatten = True
-    yum_repos: dict
+    yum_repos: Dict
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

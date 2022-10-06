@@ -1,6 +1,7 @@
 """
 Configuration files
 """
+from typing import Dict
 from attr import define
 from image_info.report.common import Common
 from image_info.utils.files import (_read_glob_paths_with_parser,
@@ -13,7 +14,7 @@ class SecurityLimits(Common):
     SecurityLimits
     """
     flatten = True
-    security_limits: dict
+    security_limits: Dict
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

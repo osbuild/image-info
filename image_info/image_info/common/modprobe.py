@@ -1,6 +1,7 @@
 """
 Configuration files
 """
+from typing import Dict
 from attr import define
 from image_info.report.common import Common
 from image_info.utils.files import _read_glob_paths_with_parser
@@ -12,7 +13,7 @@ class Modprobe(Common):
     Modprobe
     """
     flatten = True
-    modprobe: dict
+    modprobe: Dict
 
     @staticmethod
     def read_modprobe_config(config_path):

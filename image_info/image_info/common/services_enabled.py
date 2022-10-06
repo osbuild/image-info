@@ -2,6 +2,7 @@
 Services
 """
 import os
+from typing import List
 from attr import define
 from image_info.report.common import Common
 from image_info.utils.process import subprocess_check_output
@@ -99,7 +100,7 @@ class ServicesEnabled(Common):
     Lists the packages of the distribution
     """
     flatten = True
-    services_enabled: list[str]
+    services_enabled: List[str]
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

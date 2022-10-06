@@ -4,6 +4,7 @@ environment
 import os
 import contextlib
 import glob
+from typing import Dict
 from attr import define
 from image_info.report.common import Common
 
@@ -14,7 +15,7 @@ class Sudoers(Common):
     Sudoers
     """
     flatten = True
-    sudoers: dict
+    sudoers: Dict
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

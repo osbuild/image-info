@@ -1,6 +1,7 @@
 """
 Users
 """
+from typing import List
 from attr import define
 from image_info.report.common import Common
 
@@ -11,7 +12,7 @@ class PasswdSystem(Common):
     Passwd
     """
     flatten = True
-    passwd_system: list[str]
+    passwd_system: List[str]
 
     @classmethod
     def explore(cls, tree, is_ostree=False):

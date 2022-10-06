@@ -1,6 +1,7 @@
 """
 Users
 """
+from typing import List
 from attr import define
 from image_info.report.common import Common
 
@@ -11,7 +12,7 @@ class Groups(Common):
     Groups
     """
     flatten = True
-    groups: list[str]
+    groups: List[str]
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

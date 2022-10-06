@@ -4,6 +4,8 @@ environment
 import os
 import glob
 from attr import define
+from typing import List
+from image_info.utils.utils import parse_environment_vars
 from image_info.report.common import Common
 
 
@@ -53,7 +55,7 @@ class Bootmenu(Common):
     Bootmenu
     """
     flatten = True
-    bootmenu: list[str]
+    bootmenu: List[str]
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

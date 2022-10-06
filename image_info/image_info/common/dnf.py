@@ -3,6 +3,7 @@ Configuration files
 """
 import os
 import glob
+from typing import Dict
 from attr import define
 from image_info.report.common import Common
 from image_info.utils.files import _read_inifile_to_dict
@@ -14,7 +15,7 @@ class Dnf(Common):
     Dnf
     """
     flatten = True
-    dnf: dict
+    dnf: Dict
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

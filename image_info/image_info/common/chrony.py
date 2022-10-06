@@ -2,6 +2,7 @@
 Configuration files
 """
 import contextlib
+from typing import Dict
 from attr import define
 from image_info.report.common import Common
 
@@ -12,7 +13,7 @@ class Chrony(Common):
     Chrony
     """
     flatten = True
-    chrony: dict
+    chrony: Dict
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

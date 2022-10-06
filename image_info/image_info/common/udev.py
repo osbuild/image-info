@@ -3,6 +3,7 @@ Configuration files
 """
 import os
 import glob
+from typing import Dict
 from attr import define
 from image_info.report.common import Common
 
@@ -10,7 +11,7 @@ from image_info.report.common import Common
 @define(slots=False)
 class Udev(Common):
     flatten = True
-    _l_etc_l_udev_l_rules__d: dict
+    _l_etc_l_udev_l_rules__d: Dict
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

@@ -3,6 +3,7 @@ Configuration files
 """
 import configparser
 import contextlib
+from typing import Dict
 from attr import define
 from image_info.report.common import Common
 from image_info.utils.files import _read_glob_paths_with_parser
@@ -14,7 +15,7 @@ class SystemdLogind(Common):
     SystemdLogind
     """
     flatten = True
-    systemd_logind: dict
+    systemd_logind: Dict
 
     @staticmethod
     def read_logind_config(config_path):

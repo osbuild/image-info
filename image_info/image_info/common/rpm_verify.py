@@ -1,6 +1,8 @@
 """
 Packages
 """
+import os
+from typing import List, Dict
 import subprocess
 from attr import define
 from image_info.report.common import Common
@@ -11,8 +13,8 @@ class RpmVerify(Common):
     """
     Read the output of 'rpm --verify'.
     """
-    changed: dict
-    missing: list
+    changed: Dict
+    missing: List
 
     @classmethod
     def explore(cls, tree, is_ostree=False):

@@ -4,6 +4,7 @@ environment
 import os
 import glob
 import contextlib
+from typing import List
 from attr import define
 from image_info.utils.utils import parse_environment_vars
 from image_info.report.common import Common
@@ -15,7 +16,7 @@ class BootEnvironment(Common):
     BootEnvironment
     """
     flatten = True
-    boot_environment: list[str]
+    boot_environment: List[str]
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

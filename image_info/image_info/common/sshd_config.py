@@ -1,6 +1,7 @@
 """
 Configuration files
 """
+from typing import Dict
 from attr import define
 from image_info.report.common import Common
 from image_info.utils.files import _read_glob_paths_with_parser
@@ -12,7 +13,7 @@ class SSHConfig(Common):
     SSHConfig
     """
     flatten = True
-    ssh_config: dict
+    ssh_config: Dict
 
     @staticmethod
     def read_ssh_config(config_path):

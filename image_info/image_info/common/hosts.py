@@ -2,6 +2,7 @@
 Network config
 """
 
+from typing import List
 import contextlib
 from attr import define
 from image_info.report.common import Common
@@ -13,7 +14,7 @@ class Hosts(Common):
     Hosts
     """
     flatten = True
-    hosts: list[str]
+    hosts: List[str]
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

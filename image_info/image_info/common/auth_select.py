@@ -2,6 +2,7 @@
 Configuration files
 """
 import contextlib
+from typing import List
 from attr import define
 from image_info.report.common import Common
 
@@ -11,7 +12,7 @@ class Authselect(Common):
     """
     AuthSelect
     """
-    enabled_features: list
+    enabled_features: List
     profile_id: str
 
     @classmethod

@@ -4,7 +4,11 @@ Configuration files
 import configparser
 import contextlib
 from typing import Dict
-from attr import define
+try:
+    from attr import define, field
+except ImportError:
+    from attr import s as define
+    from attr import ib as field
 from image_info.report.common import Common
 from image_info.utils.files import _read_glob_paths_with_parser
 
@@ -15,7 +19,7 @@ class SystemdLogind(Common):
     SystemdLogind
     """
     flatten = True
-    systemd_logind: Dict
+    systemd_logind: Dict = field()
 
     @staticmethod
     def read_logind_config(config_path):

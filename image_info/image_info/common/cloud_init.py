@@ -4,7 +4,11 @@ Configuration files
 import contextlib
 from typing import Dict
 import yaml
-from attr import define
+try:
+    from attr import define, field
+except ImportError:
+    from attr import s as define
+    from attr import ib as field
 from image_info.report.common import Common
 
 from image_info.utils.files import _read_glob_paths_with_parser
@@ -16,7 +20,7 @@ class CloudInit(Common):
     CloudInit
     """
     flatten = True
-    cloud_init: Dict
+    cloud_init: Dict = field()
 
     @staticmethod
     def read_cloud_init_config(config_path):

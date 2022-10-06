@@ -5,7 +5,11 @@ Network config
 import contextlib
 from typing import Dict
 import xml.etree.ElementTree
-from attr import define
+try:
+    from attr import define, field
+except ImportError:
+    from attr import s as define
+    from attr import ib as field
 from image_info.report.common import Common
 from image_info.common.firewall_default_zone import FirewallDefaultZone
 
@@ -16,7 +20,7 @@ class FirewallEnabled(Common):
     FirewalEnabled
     """
     flatten = True
-    firewall_enabled: Dict
+    firewall_enabled: Dict = field()
 
     @staticmethod
     def read_firewall_zone(tree):

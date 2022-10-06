@@ -4,14 +4,18 @@ Configuration files
 import os
 import glob
 from typing import Dict
-from attr import define
+try:
+    from attr import define, field
+except ImportError:
+    from attr import s as define
+    from attr import ib as field
 from image_info.report.common import Common
 
 
 @define(slots=False)
 class Udev(Common):
     flatten = True
-    _l_etc_l_udev_l_rules__d: Dict
+    _l_etc_l_udev_l_rules__d: Dict = field()
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

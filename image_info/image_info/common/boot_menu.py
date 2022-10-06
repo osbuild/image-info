@@ -3,9 +3,12 @@ environment
 """
 import os
 import glob
-from attr import define
 from typing import List
-from image_info.utils.utils import parse_environment_vars
+try:
+    from attr import define, field
+except ImportError:
+    from attr import s as define
+    from attr import ib as field
 from image_info.report.common import Common
 
 
@@ -55,7 +58,7 @@ class Bootmenu(Common):
     Bootmenu
     """
     flatten = True
-    bootmenu: List[str]
+    bootmenu: List[str] = field()
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

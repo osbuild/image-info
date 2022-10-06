@@ -2,7 +2,11 @@
 Configuration files
 """
 from typing import Dict
-from attr import define
+try:
+    from attr import define, field
+except ImportError:
+    from attr import s as define
+    from attr import ib as field
 from image_info.report.common import Common
 from image_info.utils.files import _read_glob_paths_with_parser
 
@@ -13,7 +17,7 @@ class Modprobe(Common):
     Modprobe
     """
     flatten = True
-    modprobe: Dict
+    modprobe: Dict = field()
 
     @staticmethod
     def read_modprobe_config(config_path):

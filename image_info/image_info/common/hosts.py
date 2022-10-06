@@ -4,7 +4,11 @@ Network config
 
 from typing import List
 import contextlib
-from attr import define
+try:
+    from attr import define, field
+except ImportError:
+    from attr import s as define
+    from attr import ib as field
 from image_info.report.common import Common
 
 
@@ -14,7 +18,7 @@ class Hosts(Common):
     Hosts
     """
     flatten = True
-    hosts: List[str]
+    hosts: List[str] = field()
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

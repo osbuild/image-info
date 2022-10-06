@@ -3,7 +3,11 @@ Configuration files
 """
 import contextlib
 from typing import List
-from attr import define
+try:
+    from attr import define, field
+except ImportError:
+    from attr import s as define
+    from attr import ib as field
 from image_info.report.common import Common
 
 
@@ -12,8 +16,8 @@ class Authselect(Common):
     """
     AuthSelect
     """
-    enabled_features: List
-    profile_id: str
+    enabled_features: List = field()
+    profile_id: str = field()
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

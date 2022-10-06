@@ -2,7 +2,11 @@
 Configuration files
 """
 from typing import Dict
-from attr import define
+try:
+    from attr import define, field
+except ImportError:
+    from attr import s as define
+    from attr import ib as field
 from image_info.report.common import Common
 from image_info.utils.files import (_read_glob_paths_with_parser,
                                     read_tmpfilesd_config)
@@ -14,7 +18,7 @@ class SecurityLimits(Common):
     SecurityLimits
     """
     flatten = True
-    security_limits: Dict
+    security_limits: Dict = field()
 
     @classmethod
     def explore(cls, tree, _is_ostree=False):

@@ -98,3 +98,31 @@ def _read_inifile_to_dict(config_path):
                     result[section] = section_config
 
     return result
+
+
+def read_tmpfilesd_config(config_path):
+    """
+    Read tmpfiles.d configuration files.
+
+    Returns: list of strings representing uncommented lines read from the
+    configuration file.
+
+    An example return value:
+    [
+        "x /tmp/.sap*",
+        "x /tmp/.hdb*lock",
+        "x /tmp/.trex*lock"
+    ]
+    """
+    file_lines = []
+
+    with open(config_path) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            if line[0] == "#":
+                continue
+            file_lines.append(line)
+
+    return file_lines

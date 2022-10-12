@@ -3,35 +3,8 @@ Configuration files
 """
 from attr import define
 from image_info.report.common import Common
-from image_info.utils.files import _read_glob_paths_with_parser
-
-
-def read_tmpfilesd_config(config_path):
-    """
-    Read tmpfiles.d configuration files.
-
-    Returns: list of strings representing uncommented lines read from the
-    configuration file.
-
-    An example return value:
-    [
-        "x /tmp/.sap*",
-        "x /tmp/.hdb*lock",
-        "x /tmp/.trex*lock"
-    ]
-    """
-    file_lines = []
-
-    with open(config_path) as f:
-        for line in f:
-            line = line.strip()
-            if not line:
-                continue
-            if line[0] == "#":
-                continue
-            file_lines.append(line)
-
-    return file_lines
+from image_info.utils.files import (_read_glob_paths_with_parser,
+                                    read_tmpfilesd_config)
 
 
 @define(slots=False)

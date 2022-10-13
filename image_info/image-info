@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+
+import sys
+
+from image_info.main_cli import inspect
+
+if __name__ == "__main__":
+    sys.exit(inspect())

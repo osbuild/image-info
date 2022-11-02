@@ -9,7 +9,7 @@ setuptools.setup(
         "image_info.core",
         "image_info.utils",
         "image_info.report",
-        "image_info.common",
+        "image_info.report.inside_tree",
     ],
     license='Apache-2.0',
     install_requires=[

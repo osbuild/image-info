@@ -16,14 +16,14 @@ import contextlib
 
 from osbuild import loop
 
-from image_info.report.common import import_plugins, find_commons
+from image_info.report.inside_tree_element import find_all
 from image_info.utils.utils import sanitize_name
 from image_info.utils.loop import loop_open
 from image_info.utils.mount import mount_at
 from image_info.report.report import Report
 from image_info.report.ostree import Type, Ostree
-from image_info.common.boot_menu import Bootmenu
-from image_info.common.boot_env import BootEnvironment
+from image_info.report.inside_tree.boot_menu import Bootmenu
+from image_info.report.inside_tree.boot_env import BootEnvironment
 
 from image_info.report.image import ImageFormat, PartitionTable, Bootloader
 
@@ -37,7 +37,6 @@ class Target(ABC):
     def __init__(self, target):
         self.target = target
         self.report = Report()
-        import_plugins()
 
     @classmethod
     def match(cls, target):
@@ -79,39 +78,39 @@ class Target(ABC):
             return ImageTarget.from_json(json_o)
         return DirTarget.from_json(json_o)
 
-    def inspect_commons(self, tree, is_ostree=False):
+    def do_inside_tree_elements(self, tree, is_ostree=False):
         """
-        Adds all the common elements to the report
+        Adds all the elements to the report
         """
         if os.path.exists(f"{tree}/etc/os-release"):
-            commons = find_commons()
-            for common in commons:
-                common_o = common.explore(tree, is_ostree)
-                if common_o:
-                    self.report.add_element(common_o)
+            inside_tree_elements = find_all()
+            for ite in inside_tree_elements:
+                ite_obj = ite.explore(tree, is_ostree)
+                if ite_obj:
+                    self.report.add_element(ite_obj)
         elif len(glob.glob(f"{tree}/vmlinuz-*")) > 0:
             self.report.add_element(BootEnvironment)
             self.report.add_element(Bootmenu)
         else:
             print("EFI partition", file=sys.stderr)
 
-    def commons_from_json(self, json_o):
+    def inside_tree_elements_from_json(self, json_o):
         """
-        Loads all the common elements from the input JSON
+        Loads all the ite elements from the input JSON
         """
-        commons = find_commons()
-        for common in commons:
-            c_json_name = sanitize_name(common.__name__)
+        inside_tree_elements = find_all()
+        for ite in inside_tree_elements:
+            c_json_name = sanitize_name(ite.__name__)
             json_data = None
-            if common.flatten:
+            if ite.flatten:
                 json_data = json_o
             else:
                 json_data = json_o.get(c_json_name)
             if json_data:
                 with contextlib.suppress(KeyError):
-                    common_o = common.from_json(json_data)
-                    if common_o:
-                        self.report.add_element(common_o)
+                    ite_obj = ite.from_json(json_data)
+                    if ite_obj:
+                        self.report.add_element(ite_obj)
 
 
 class TarballTarget(Target):
@@ -213,12 +212,12 @@ class DirTarget(Target):
             # can not modify its content (e.g. create additional files).
             # mount_at() always mounts the source as read-only!
             with mount_at(self.target, tree_ro, ["bind"]) as _mountpoint:
-                self.inspect_commons(tree_ro)
+                self.do_inside_tree_elements(tree_ro)
 
     @classmethod
     def from_json(cls, json_o):
         dtt = cls(None)
-        dtt.commons_from_json(json_o)
+        dtt.inside_tree_elements_from_json(json_o)
         return dtt
 
 
@@ -247,15 +246,16 @@ class OSTreeTarget(Target):
                 # mount_at() always mounts the source as read-only!
                 with mount_at(tree, tree_ro, ["bind"]) as _:
                     os.makedirs(f"{tree}/etc", exist_ok=True)
-                    with mount_at(f"{tree}/usr/etc", f"{tree}/etc", extra=["--bind"]):
-                        self.inspect_commons(tree_ro, is_ostree=True)
+                    with mount_at(
+                            f"{tree}/usr/etc", f"{tree}/etc", extra=["--bind"]):
+                        self.do_inside_tree_elements(tree_ro, is_ostree=True)
 
     @classmethod
     def from_json(cls, json_o):
         ott = cls(None)
         ott.report.add_element(Type.from_json(json_o))
         ott.report.add_element(Ostree.from_json(json_o["ostree"]))
-        ott.commons_from_json(json_o)
+        ott.inside_tree_elements_from_json(json_o)
         return ott
 
 
@@ -274,7 +274,7 @@ class ImageTarget(Target):
                 ptable = PartitionTable.from_device(device, loctl, context)
                 self.report.add_element(ptable)
                 with ptable.mount(device, context) as tree:
-                    self.inspect_commons(tree)
+                    self.do_inside_tree_elements(tree)
 
     @classmethod
     def from_json(cls, json_o):
@@ -284,7 +284,7 @@ class ImageTarget(Target):
         part_table = PartitionTable.from_json(json_o)
         imt.report.add_element(part_table)
         if part_table.partition_table_id:
-            imt.commons_from_json(json_o)
+            imt.inside_tree_elements_from_json(json_o)
         return imt
 
     @ contextlib.contextmanager

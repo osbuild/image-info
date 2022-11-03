@@ -164,21 +164,3 @@ class PartitionTable(ReportElement):
 
         partitions.sort(key=lambda x: x.partuuid)
         return cls(ptable["label"], ptable["id"], partitions)
-
-    @contextlib.contextmanager
-    def mount(self, device, context):
-        """
-        If the object contains a partition table:
-            - Mount every partitions from the entire filesystem. This function
-              will loop through all the partitions of the partition table, check
-              if they are LVM partitions or not, then find the fstab and mount
-              them accordingly.
-        If the object does not:
-            - Mount the device as the tree
-        Yield the mounted tree as a result
-        """
-        if self.partition_table:
-            yield FileSystemMounter(self.partitions).mount_all(context)
-        else:
-            with mount(device) as tree:
-                yield tree

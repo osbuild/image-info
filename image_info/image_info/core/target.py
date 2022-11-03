@@ -265,16 +265,11 @@ class ImageTarget(Target):
     """
 
     def inspect(self):
-        loctl = loop.LoopControl()
-        image_format = ImageFormat.from_device(self.target)
-        self.report.add_element(image_format)
-        with self.open_target(loctl, image_format) as device:
+        self.report.add_element(ImageFormat.from_device(self.target))
+        with FileSystemMounter(self.target).mount() as device, tree:
             self.report.add_element(Bootloader.from_device(device))
-            with contextlib.ExitStack() as context:
-                ptable = PartitionTable.from_device(device, loctl, context)
-                self.report.add_element(ptable)
-                with ptable.mount(device, context) as tree:
-                    self.do_inside_tree_elements(tree)
+            self.report.add_element(PartitionTable.from_device(device))
+            self.do_inside_tree_elements(tree)
 
     @classmethod
     def from_json(cls, json_o):
@@ -283,39 +278,12 @@ class ImageTarget(Target):
         imt.report.add_element(Bootloader.from_json(json_o))
         part_table = PartitionTable.from_json(json_o)
         imt.report.add_element(part_table)
+        # Due to the current format of the image_info,
+        # sometimes these elements have different values
+        # depending on the context and this could be `None`.
+        # For now we need to check for this, but we could
+        # possibly refactor this in the future at the cost
+        # of breaking compatibility.
         if part_table.partition_table_id:
             imt.inside_tree_elements_from_json(json_o)
         return imt
-
-    @ contextlib.contextmanager
-    def open_target(self, ctl, image_format):
-        """
-        Opens the image in a loopback device. Apply qemu convertion if necessary
-        """
-        with tempfile.TemporaryDirectory(dir="/var/tmp") as tmp:
-            if image_format.image_format["type"] != "raw":
-                target = os.path.join(tmp, "image.raw")
-                # a bug exists in qemu that causes the conversion to raw to fail
-                # on aarch64 systems with a lot of cpus. A workaround is to use
-                # a single coroutine to do the conversion. It doesn't slow down
-                # the conversion by much, but it hangs about half the time
-                # without the limit set. 😢
-                # bug: https://bugs.launchpad.net/qemu/+bug/1805256
-                if platform.machine() == 'aarch64':
-                    subprocess.run(
-                        ["qemu-img", "convert", "-m", "1", "-O", "raw",
-                            self.target,
-                            target], check=True
-                    )
-                else:
-                    subprocess.run(
-                        ["qemu-img", "convert", "-O", "raw", self.target,
-                            target], check=True
-                    )
-            else:
-                target = self.target
-
-            size = os.stat(target).st_size
-
-            with loop_open(ctl, target, offset=0, size=size) as dev:
-                yield dev

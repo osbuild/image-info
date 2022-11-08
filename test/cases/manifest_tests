@@ -4,11 +4,21 @@ Starts the osbuild-image-test executable asking it to filter its tests based on
 current machine architecture and distribution.
 """
 
+import argparse
 import subprocess
 import configparser
 import platform
 import sys
 from subprocess import CalledProcessError
+
+parser = argparse.ArgumentParser(description="manifest tests")
+parser.add_argument(
+    "--test",
+    action="store_true",
+    default=False,
+    help="Test the generated image info against the DB, default to generator "
+    "mode"
+)
 
 OS_RELEASE_PATH = "/etc/os-release"
 
@@ -23,11 +33,14 @@ distro = distro.replace('.', '')
 print(f"Running the osbuild-image-test for arch {platform.machine()} and "
         f"distribution {distro}")
 
+args = parser.parse_args()
+
 try:
-    subprocess.run(["tools/osbuild-image-test",
+    command = ["tools/osbuild-image-test",
                     f"--arch={platform.machine()}",
-                    f"--distro={distro}",
-                    "--generator-mode"],
-                    check=True)
+                    f"--distro={distro}"]
+    if not args.test:
+        command.append("--generator-mode")
+    subprocess.run(command, check=True)
 except CalledProcessError:
     sys.exit(1)

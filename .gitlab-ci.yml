@@ -44,12 +44,7 @@ Regression:
   stage: test
   extends: .terraform
   script:
-    - schutzbot/deploy.sh
-    - schutzbot/selinux-context.sh
-    - tests/cases/manifest_tests
-  rules:
-    - changes:
-      - image-info
+    - schutzbot/regression.sh
   artifacts:
     when: always
     paths:

@@ -57,4 +57,8 @@ jobs:
           touch ~/.ssh/known_hosts
           ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
           git remote add ci git@gitlab.com:redhat/services/products/image-builder/ci/manifest-db.git
-          git push -f ci
+          if [ "$(git diff --name-only main tools/image-info)" = "tools/image-info" ]; then
+              git push -f -o ci.variable="IMAGE_INFO_CHANGED=true" ci
+          else
+              git push -f ci
+          fi

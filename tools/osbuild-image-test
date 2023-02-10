@@ -293,11 +293,12 @@ class TestCase:
                 LVM2 partitions have a UUID that is not fixed. Replace the value
                 upon comparison time
                 """
-                partitions = imi.get("partitions")
-                if partitions:
-                    for partition in partitions:
-                        if partition.get("fstype") == "LVM2_member":
-                            partition["uuid"] = "2022-07-01-fixed-uuid"
+                if imi:
+                    partitions = imi.get("partitions")
+                    if partitions:
+                        for partition in partitions:
+                            if partition.get("fstype") == "LVM2_member":
+                                partition["uuid"] = "2022-07-01-fixed-uuid"
                 return imi
 
             def iso(imi):

@@ -2189,7 +2189,7 @@
         {
           "name": "org.osbuild.kernel-cmdline",
           "options": {
-            "root_fs_uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+            "root_fs_uuid": "fce496af-48d2-4ae7-8806-0d563967a21d",
             "kernel_opts": "net.ifnames=0 crashkernel=auto"
           }
         },
@@ -3632,7 +3632,7 @@
           "options": {
             "filesystems": [
               {
-                "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+                "uuid": "d99f0577-d607-424e-b425-37b55b54952c",
                 "vfs_type": "xfs",
                 "path": "/",
                 "options": "defaults"
@@ -3697,7 +3697,7 @@
               "bootable": true,
               "filesystem": {
                 "type": "xfs",
-                "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+                "uuid": "d99f0577-d607-424e-b425-37b55b54952c",
                 "mountpoint": "/"
               }
             }
@@ -4457,7 +4457,7 @@
         "size": 4293918720,
         "start": 1048576,
         "type": "83",
-        "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd"
+        "uuid": "d99f0577-d607-424e-b425-37b55b54952c"
       }
     ],
     "passwd": [

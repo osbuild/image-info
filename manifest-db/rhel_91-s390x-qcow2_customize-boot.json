@@ -2672,7 +2672,7 @@
           {
             "type": "org.osbuild.kernel-cmdline",
             "options": {
-              "root_fs_uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
+              "root_fs_uuid": "1100986b-2405-43a6-99ab-2448762571da",
               "kernel_opts": "console=tty0 console=ttyS0,115200n8 no_timer_check net.ifnames=0 debug"
             }
           },
@@ -6649,19 +6649,19 @@
             "options": {
               "filesystems": [
                 {
-                  "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+                  "uuid": "cc7668e3-901b-4cc4-9fe7-d0e8d50d4713",
                   "vfs_type": "xfs",
                   "path": "/boot",
                   "options": "defaults"
                 },
                 {
-                  "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
+                  "uuid": "d26c3f61-f36b-4ee0-bde4-12b8db48e27e",
                   "vfs_type": "xfs",
                   "path": "/",
                   "options": "defaults"
                 },
                 {
-                  "uuid": "fb180daf-48a7-4ee0-b10d-394651850fd4",
+                  "uuid": "8cc665a9-9f2e-4842-b080-5d003e95d5e1",
                   "vfs_type": "xfs",
                   "path": "/opt",
                   "options": "defaults"
@@ -6749,7 +6749,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "uuid": "cc7668e3-901b-4cc4-9fe7-d0e8d50d4713",
               "label": "boot"
             },
             "devices": {
@@ -6767,7 +6767,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75"
+              "uuid": "d26c3f61-f36b-4ee0-bde4-12b8db48e27e"
             },
             "devices": {
               "device": {
@@ -6791,7 +6791,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "fb180daf-48a7-4ee0-b10d-394651850fd4"
+              "uuid": "8cc665a9-9f2e-4842-b080-5d003e95d5e1"
             },
             "devices": {
               "device": {

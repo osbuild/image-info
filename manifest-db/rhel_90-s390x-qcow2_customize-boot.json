@@ -1035,7 +1035,7 @@
           {
             "type": "org.osbuild.kernel-cmdline",
             "options": {
-              "root_fs_uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
+              "root_fs_uuid": "44f2e410-3dec-456a-ae9b-6ba17d613ea6",
               "kernel_opts": "console=tty0 console=ttyS0,115200n8 no_timer_check net.ifnames=0 debug"
             }
           },
@@ -2570,19 +2570,19 @@
             "options": {
               "filesystems": [
                 {
-                  "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+                  "uuid": "60961a62-5ce8-48d9-b932-46bbcca38588",
                   "vfs_type": "xfs",
                   "path": "/boot",
                   "options": "defaults"
                 },
                 {
-                  "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
+                  "uuid": "52220064-2176-4f06-a71c-3cb5349b6c09",
                   "vfs_type": "xfs",
                   "path": "/",
                   "options": "defaults"
                 },
                 {
-                  "uuid": "fb180daf-48a7-4ee0-b10d-394651850fd4",
+                  "uuid": "f9326300-adfb-4788-813d-25dd7c888d8a",
                   "vfs_type": "xfs",
                   "path": "/opt",
                   "options": "defaults"
@@ -2670,7 +2670,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "uuid": "60961a62-5ce8-48d9-b932-46bbcca38588",
               "label": "boot"
             },
             "devices": {
@@ -2688,7 +2688,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75"
+              "uuid": "52220064-2176-4f06-a71c-3cb5349b6c09"
             },
             "devices": {
               "device": {
@@ -2712,7 +2712,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "fb180daf-48a7-4ee0-b10d-394651850fd4"
+              "uuid": "f9326300-adfb-4788-813d-25dd7c888d8a"
             },
             "devices": {
               "device": {
@@ -5313,7 +5313,7 @@
         "size": 524288000,
         "start": 1048576,
         "type": "83",
-        "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8"
+        "uuid": "60961a62-5ce8-48d9-b932-46bbcca38588"
       },
       {
         "bootable": true,
@@ -5325,12 +5325,12 @@
           "optlv": {
             "fstype": "xfs",
             "label": null,
-            "uuid": "fb180daf-48a7-4ee0-b10d-394651850fd4"
+            "uuid": "f9326300-adfb-4788-813d-25dd7c888d8a"
           },
           "rootlv": {
             "fstype": "xfs",
             "label": null,
-            "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75"
+            "uuid": "52220064-2176-4f06-a71c-3cb5349b6c09"
           }
         },
         "partuuid": "14fc63d2-02",

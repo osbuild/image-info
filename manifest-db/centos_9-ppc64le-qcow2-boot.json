@@ -1848,7 +1848,7 @@
           {
             "type": "org.osbuild.kernel-cmdline",
             "options": {
-              "root_fs_uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
+              "root_fs_uuid": "fb666483-cec4-46c4-9c07-3a23ef45aaf8",
               "kernel_opts": "console=tty0 console=ttyS0,115200n8 no_timer_check net.ifnames=0"
             }
           },
@@ -5585,13 +5585,13 @@
             "options": {
               "filesystems": [
                 {
-                  "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+                  "uuid": "5fc7570b-d50e-4942-828e-9c69f42a3eba",
                   "vfs_type": "xfs",
                   "path": "/boot",
                   "options": "defaults"
                 },
                 {
-                  "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
+                  "uuid": "b30a89d8-ad22-47c0-bc9a-03443df3716f",
                   "vfs_type": "xfs",
                   "path": "/",
                   "options": "defaults"
@@ -5602,8 +5602,8 @@
           {
             "type": "org.osbuild.grub2",
             "options": {
-              "root_fs_uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
-              "boot_fs_uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "root_fs_uuid": "fb666483-cec4-46c4-9c07-3a23ef45aaf8",
+              "boot_fs_uuid": "ef7a1ebf-b1e5-4e2e-8a13-80eb56c85bbe",
               "legacy": "powerpc-ieee1275",
               "saved_entry": "ffffffffffffffffffffffffffffffff-5.14.0-55.el9.ppc64le",
               "write_cmdline": false,
@@ -5666,7 +5666,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "uuid": "5fc7570b-d50e-4942-828e-9c69f42a3eba",
               "label": "boot"
             },
             "devices": {
@@ -5684,7 +5684,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75"
+              "uuid": "b30a89d8-ad22-47c0-bc9a-03443df3716f"
             },
             "devices": {
               "device": {
@@ -8055,7 +8055,7 @@
         "size": 524288000,
         "start": 5242880,
         "type": "83",
-        "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8"
+        "uuid": "5fc7570b-d50e-4942-828e-9c69f42a3eba"
       },
       {
         "bootable": false,
@@ -8065,7 +8065,7 @@
         "size": 10207887360,
         "start": 529530880,
         "type": "83",
-        "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75"
+        "uuid": "b30a89d8-ad22-47c0-bc9a-03443df3716f"
       }
     ],
     "passwd": [

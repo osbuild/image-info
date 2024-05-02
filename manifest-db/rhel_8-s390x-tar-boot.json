@@ -1523,7 +1523,7 @@
         {
           "name": "org.osbuild.kernel-cmdline",
           "options": {
-            "root_fs_uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+            "root_fs_uuid": "94d3105a-b103-4433-8152-eb664cb2e9dc",
             "kernel_opts": "net.ifnames=0 crashkernel=auto"
           }
         },

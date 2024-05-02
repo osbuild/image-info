@@ -3406,7 +3406,7 @@
           "options": {
             "filesystems": [
               {
-                "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+                "uuid": "a58a26c5-a5e1-48e4-997f-9b2c6f514432",
                 "vfs_type": "xfs",
                 "path": "/",
                 "options": "defaults"
@@ -3417,7 +3417,7 @@
         {
           "name": "org.osbuild.grub2",
           "options": {
-            "root_fs_uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+            "root_fs_uuid": "98dce221-6d55-4d5a-86f6-618424f48284",
             "kernel_opts": "console=ttyS0 console=ttyS0,115200n8 no_timer_check crashkernel=auto net.ifnames=0 debug",
             "legacy": "i386-pc"
           }
@@ -3534,7 +3534,7 @@
               "bootable": true,
               "filesystem": {
                 "type": "xfs",
-                "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+                "uuid": "a58a26c5-a5e1-48e4-997f-9b2c6f514432",
                 "mountpoint": "/"
               }
             }
@@ -4280,7 +4280,7 @@
         "size": 4293918720,
         "start": 1048576,
         "type": "83",
-        "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd"
+        "uuid": "a58a26c5-a5e1-48e4-997f-9b2c6f514432"
       }
     ],
     "passwd": [

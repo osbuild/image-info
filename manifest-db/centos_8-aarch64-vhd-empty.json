@@ -6468,7 +6468,7 @@
             "options": {
               "filesystems": [
                 {
-                  "uuid": "4a3096bf-521c-4921-96ab-b0dd0092d180",
+                  "uuid": "bfd579e0-ff4e-461a-9389-b426b77829df",
                   "vfs_type": "xfs",
                   "path": "/",
                   "options": "defaults"
@@ -6486,7 +6486,7 @@
           {
             "type": "org.osbuild.grub2",
             "options": {
-              "root_fs_uuid": "4a3096bf-521c-4921-96ab-b0dd0092d180",
+              "root_fs_uuid": "25e17aab-c849-432b-9bf0-5cc47c91b382",
               "kernel_opts": "ro loglevel=3 crashkernel=auto console=tty1 console=ttyS0 earlyprintk=ttyS0 rootdelay=300",
               "uefi": {
                 "vendor": "centos"
@@ -6544,19 +6544,19 @@
             "type": "org.osbuild.sfdisk",
             "options": {
               "label": "gpt",
-              "uuid": "D209C89E-EA5E-4FBD-B161-B461CCE297E0",
+              "uuid": "f95dd2d0-dae6-4c08-bf6f-8641429c1c30",
               "partitions": [
                 {
                   "size": 204800,
                   "start": 2048,
                   "type": "C12A7328-F81F-11D2-BA4B-00A0C93EC93B",
-                  "uuid": "68B2905B-DF3E-4FB3-80FA-49D1E773AA33"
+                  "uuid": "520e5939-8903-4c05-ba2c-e01fa8ff1f06"
                 },
                 {
                   "size": 8181727,
                   "start": 206848,
                   "type": "0FC63DAF-8483-4772-8E79-3D69D8477DE4",
-                  "uuid": "6264D520-3FB9-423F-8AB8-7A0A8E3D3562"
+                  "uuid": "4625c3ae-0aa7-485c-a90e-59c97beb2cb6"
                 }
               ]
             },
@@ -6590,7 +6590,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "4a3096bf-521c-4921-96ab-b0dd0092d180",
+              "uuid": "bfd579e0-ff4e-461a-9389-b426b77829df",
               "label": "root"
             },
             "devices": {

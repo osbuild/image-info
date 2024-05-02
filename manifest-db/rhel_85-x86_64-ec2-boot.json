@@ -2175,7 +2175,7 @@
             "options": {
               "filesystems": [
                 {
-                  "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+                  "uuid": "c308b01a-aa82-4865-92a5-f64ed64c8695",
                   "vfs_type": "xfs",
                   "path": "/",
                   "options": "defaults"
@@ -2186,7 +2186,7 @@
           {
             "type": "org.osbuild.grub2",
             "options": {
-              "root_fs_uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "root_fs_uuid": "12f4c6b4-0c55-4d7c-b0e2-8e85e854f219",
               "kernel_opts": "console=ttyS0,115200n8 console=tty0 net.ifnames=0 rd.blacklist=nouveau nvme_core.io_timeout=4294967295 crashkernel=auto",
               "legacy": "i386-pc",
               "saved_entry": "ffffffffffffffffffffffffffffffff-4.18.0-348.el8.x86_64",
@@ -2216,20 +2216,20 @@
             "type": "org.osbuild.sfdisk",
             "options": {
               "label": "gpt",
-              "uuid": "D209C89E-EA5E-4FBD-B161-B461CCE297E0",
+              "uuid": "9f91e69f-19b5-40fb-ba39-b66c69ea0dd3",
               "partitions": [
                 {
                   "bootable": true,
                   "size": 2048,
                   "start": 2048,
                   "type": "21686148-6449-6E6F-744E-656564454649",
-                  "uuid": "FAC7F1FB-3E8D-4137-A512-961DE09A5549"
+                  "uuid": "a7c9447d-d5d1-498b-9255-57786567efb1"
                 },
                 {
                   "size": 20967324,
                   "start": 4096,
                   "type": "0FC63DAF-8483-4772-8E79-3D69D8477DE4",
-                  "uuid": "6264D520-3FB9-423F-8AB8-7A0A8E3D3562"
+                  "uuid": "02103e40-00a4-42aa-9ed7-1dba22c01a8e"
                 }
               ]
             },
@@ -2246,7 +2246,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "uuid": "c308b01a-aa82-4865-92a5-f64ed64c8695",
               "label": "root"
             },
             "devices": {

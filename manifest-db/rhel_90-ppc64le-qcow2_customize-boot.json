@@ -726,7 +726,7 @@
           {
             "type": "org.osbuild.kernel-cmdline",
             "options": {
-              "root_fs_uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
+              "root_fs_uuid": "adb0457a-81c7-49a4-a119-38a3097adaf4",
               "kernel_opts": "console=tty0 console=ttyS0,115200n8 no_timer_check net.ifnames=0 debug"
             }
           },
@@ -2312,19 +2312,19 @@
             "options": {
               "filesystems": [
                 {
-                  "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+                  "uuid": "8f7bb536-399a-4101-b90b-3e236cc44a9e",
                   "vfs_type": "xfs",
                   "path": "/boot",
                   "options": "defaults"
                 },
                 {
-                  "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
+                  "uuid": "50307775-1ea6-4bc2-a85a-84ac8c21a22f",
                   "vfs_type": "xfs",
                   "path": "/",
                   "options": "defaults"
                 },
                 {
-                  "uuid": "fb180daf-48a7-4ee0-b10d-394651850fd4",
+                  "uuid": "32afcdb8-a1e5-4f24-a8a3-f170549f1344",
                   "vfs_type": "xfs",
                   "path": "/opt",
                   "options": "defaults"
@@ -2335,8 +2335,8 @@
           {
             "type": "org.osbuild.grub2",
             "options": {
-              "root_fs_uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
-              "boot_fs_uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "root_fs_uuid": "adb0457a-81c7-49a4-a119-38a3097adaf4",
+              "boot_fs_uuid": "a7126bf9-12bc-4fd1-9ae4-d578b44a674d",
               "legacy": "powerpc-ieee1275",
               "saved_entry": "ffffffffffffffffffffffffffffffff-5.14.0-55.el9.ppc64le",
               "write_cmdline": false,
@@ -2426,7 +2426,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "uuid": "8f7bb536-399a-4101-b90b-3e236cc44a9e",
               "label": "boot"
             },
             "devices": {
@@ -2444,7 +2444,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75"
+              "uuid": "50307775-1ea6-4bc2-a85a-84ac8c21a22f"
             },
             "devices": {
               "device": {
@@ -2468,7 +2468,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "fb180daf-48a7-4ee0-b10d-394651850fd4"
+              "uuid": "32afcdb8-a1e5-4f24-a8a3-f170549f1344"
             },
             "devices": {
               "device": {
@@ -5005,7 +5005,7 @@
         "size": 524288000,
         "start": 5242880,
         "type": "83",
-        "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8"
+        "uuid": "8f7bb536-399a-4101-b90b-3e236cc44a9e"
       },
       {
         "bootable": false,
@@ -5017,12 +5017,12 @@
           "optlv": {
             "fstype": "xfs",
             "label": null,
-            "uuid": "fb180daf-48a7-4ee0-b10d-394651850fd4"
+            "uuid": "32afcdb8-a1e5-4f24-a8a3-f170549f1344"
           },
           "rootlv": {
             "fstype": "xfs",
             "label": null,
-            "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75"
+            "uuid": "50307775-1ea6-4bc2-a85a-84ac8c21a22f"
           }
         },
         "partuuid": "14fc63d2-03",

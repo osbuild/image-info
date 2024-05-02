@@ -2194,7 +2194,7 @@
             "options": {
               "filesystems": [
                 {
-                  "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+                  "uuid": "e7a698da-cc4d-4122-b87b-d992b3d96413",
                   "vfs_type": "xfs",
                   "path": "/",
                   "options": "defaults"
@@ -2212,7 +2212,7 @@
           {
             "type": "org.osbuild.grub2",
             "options": {
-              "root_fs_uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "root_fs_uuid": "e1ff5058-2d26-42f9-bdbd-43f5a51b10b7",
               "kernel_opts": "ro net.ifnames=0",
               "uefi": {
                 "vendor": "redhat"
@@ -2244,19 +2244,19 @@
             "type": "org.osbuild.sfdisk",
             "options": {
               "label": "gpt",
-              "uuid": "D209C89E-EA5E-4FBD-B161-B461CCE297E0",
+              "uuid": "184a368f-ae5e-42be-88a3-2a5c4cded28d",
               "partitions": [
                 {
                   "size": 204800,
                   "start": 2048,
                   "type": "C12A7328-F81F-11D2-BA4B-00A0C93EC93B",
-                  "uuid": "68B2905B-DF3E-4FB3-80FA-49D1E773AA33"
+                  "uuid": "b3234955-d1fe-47cf-9d1a-69647d06a24c"
                 },
                 {
                   "size": 8181660,
                   "start": 206848,
                   "type": "0FC63DAF-8483-4772-8E79-3D69D8477DE4",
-                  "uuid": "6264D520-3FB9-423F-8AB8-7A0A8E3D3562"
+                  "uuid": "46ebb3e8-24f9-4b4f-934d-4f703e247d97"
                 }
               ]
             },
@@ -2290,7 +2290,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "uuid": "e7a698da-cc4d-4122-b87b-d992b3d96413",
               "label": "root"
             },
             "devices": {

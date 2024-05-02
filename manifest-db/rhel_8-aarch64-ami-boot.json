@@ -3022,7 +3022,7 @@
           "options": {
             "filesystems": [
               {
-                "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+                "uuid": "2d84ed6b-ac35-41c6-a439-aef262f5353d",
                 "vfs_type": "xfs",
                 "path": "/",
                 "options": "defaults"
@@ -3040,7 +3040,7 @@
         {
           "name": "org.osbuild.grub2",
           "options": {
-            "root_fs_uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+            "root_fs_uuid": "f6c80113-763c-4665-ada3-6224cccabd87",
             "kernel_opts": "ro console=ttyS0,115200n8 console=tty0 net.ifnames=0 rd.blacklist=nouveau nvme_core.io_timeout=4294967295 crashkernel=auto",
             "uefi": {
               "vendor": "redhat"
@@ -3090,7 +3090,7 @@
               "start": 976896,
               "filesystem": {
                 "type": "xfs",
-                "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+                "uuid": "2d84ed6b-ac35-41c6-a439-aef262f5353d",
                 "mountpoint": "/"
               }
             }
@@ -3773,7 +3773,7 @@
         "size": 5942263296,
         "start": 500170752,
         "type": "0FC63DAF-8483-4772-8E79-3D69D8477DE4",
-        "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd"
+        "uuid": "2d84ed6b-ac35-41c6-a439-aef262f5353d"
       }
     ],
     "passwd": [

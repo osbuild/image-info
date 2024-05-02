@@ -2200,19 +2200,19 @@
             "options": {
               "filesystems": [
                 {
-                  "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+                  "uuid": "4783bca1-6484-4cbf-b0fc-e7bec4752788",
                   "vfs_type": "xfs",
                   "path": "/",
                   "options": "defaults"
                 },
                 {
-                  "uuid": "fb180daf-48a7-4ee0-b10d-394651850fd4",
+                  "uuid": "ce46e3d3-be1f-43d7-8cdc-f7da5c4ec563",
                   "vfs_type": "xfs",
                   "path": "/boot",
                   "options": "defaults"
                 },
                 {
-                  "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
+                  "uuid": "c26905aa-d8d4-475c-a643-b07a37676ef3",
                   "vfs_type": "xfs",
                   "path": "/opt",
                   "options": "defaults"
@@ -2230,8 +2230,8 @@
           {
             "type": "org.osbuild.grub2",
             "options": {
-              "root_fs_uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
-              "boot_fs_uuid": "fb180daf-48a7-4ee0-b10d-394651850fd4",
+              "root_fs_uuid": "b89656a6-4f3a-48a9-873f-5df475b99097",
+              "boot_fs_uuid": "556a3f24-7c31-4e8e-aaf6-bc75d8b7cf27",
               "kernel_opts": "console=tty0 console=ttyS0,115200n8 no_timer_check net.ifnames=0 crashkernel=auto debug",
               "uefi": {
                 "vendor": "redhat"
@@ -2425,25 +2425,25 @@
             "type": "org.osbuild.sfdisk",
             "options": {
               "label": "gpt",
-              "uuid": "D209C89E-EA5E-4FBD-B161-B461CCE297E0",
+              "uuid": "8cc1550e-8a98-4ed8-9ad7-56198a102fb5",
               "partitions": [
                 {
                   "size": 204800,
                   "start": 2048,
                   "type": "C12A7328-F81F-11D2-BA4B-00A0C93EC93B",
-                  "uuid": "68B2905B-DF3E-4FB3-80FA-49D1E773AA33"
+                  "uuid": "dc442a98-b112-4c17-b2a9-a237171cd912"
                 },
                 {
                   "size": 19716063,
                   "start": 1255424,
                   "type": "E6D6D379-F507-44C2-A23C-238F2A3DF928",
-                  "uuid": "6264D520-3FB9-423F-8AB8-7A0A8E3D3562"
+                  "uuid": "2b85b761-fd6d-47a7-9539-97bd13ce84e8"
                 },
                 {
                   "size": 1048576,
                   "start": 206848,
                   "type": "BC13C2FF-59E6-4262-A352-B275FD6F7172",
-                  "uuid": "a178892e-e285-4ce1-9114-55780875d64e"
+                  "uuid": "401be45c-49ed-4711-8020-a8a8b6795ace"
                 }
               ]
             },
@@ -2503,7 +2503,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "uuid": "4783bca1-6484-4cbf-b0fc-e7bec4752788",
               "label": "root"
             },
             "devices": {
@@ -2528,7 +2528,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75"
+              "uuid": "c26905aa-d8d4-475c-a643-b07a37676ef3"
             },
             "devices": {
               "device": {
@@ -2552,7 +2552,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "fb180daf-48a7-4ee0-b10d-394651850fd4"
+              "uuid": "ce46e3d3-be1f-43d7-8cdc-f7da5c4ec563"
             },
             "devices": {
               "device": {
@@ -5049,15 +5049,15 @@
           "optlv": {
             "fstype": "xfs",
             "label": null,
-            "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75"
+            "uuid": "c26905aa-d8d4-475c-a643-b07a37676ef3"
           },
           "rootlv": {
             "fstype": "xfs",
             "label": "root",
-            "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8"
+            "uuid": "4783bca1-6484-4cbf-b0fc-e7bec4752788"
           }
         },
-        "partuuid": "6264D520-3FB9-423F-8AB8-7A0A8E3D3562",
+        "partuuid": "5764dbb6-816e-403a-b93f-da117effe3da",
         "size": 10094624256,
         "start": 642777088,
         "type": "E6D6D379-F507-44C2-A23C-238F2A3DF928",
@@ -5067,7 +5067,7 @@
         "bootable": false,
         "fstype": "vfat",
         "label": null,
-        "partuuid": "68B2905B-DF3E-4FB3-80FA-49D1E773AA33",
+        "partuuid": "cc33f5d0-f196-4cfc-8bba-a16c6fffe336",
         "size": 104857600,
         "start": 1048576,
         "type": "C12A7328-F81F-11D2-BA4B-00A0C93EC93B",
@@ -5077,11 +5077,11 @@
         "bootable": false,
         "fstype": "xfs",
         "label": null,
-        "partuuid": "A178892E-E285-4CE1-9114-55780875D64E",
+        "partuuid": "92f1eef0-3c23-489f-86af-f14ff0a88514",
         "size": 536870912,
         "start": 105906176,
         "type": "BC13C2FF-59E6-4262-A352-B275FD6F7172",
-        "uuid": "fb180daf-48a7-4ee0-b10d-394651850fd4"
+        "uuid": "ce46e3d3-be1f-43d7-8cdc-f7da5c4ec563"
       }
     ],
     "passwd": [

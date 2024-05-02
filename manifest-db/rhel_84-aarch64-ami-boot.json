@@ -3244,7 +3244,7 @@
           "options": {
             "filesystems": [
               {
-                "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+                "uuid": "fce341f8-3706-4427-8792-5a4e2ded2888",
                 "vfs_type": "xfs",
                 "path": "/",
                 "options": "defaults"
@@ -3262,7 +3262,7 @@
         {
           "name": "org.osbuild.grub2",
           "options": {
-            "root_fs_uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+            "root_fs_uuid": "2d136955-a9bc-4dca-89f8-a84e4bb9a861",
             "kernel_opts": "console=ttyS0,115200n8 console=tty0 net.ifnames=0 rd.blacklist=nouveau nvme_core.io_timeout=4294967295 crashkernel=auto",
             "uefi": {
               "vendor": "redhat"
@@ -3314,14 +3314,14 @@
           "format": "raw",
           "filename": "image.raw",
           "size": 6442450944,
-          "ptuuid": "D209C89E-EA5E-4FBD-B161-B461CCE297E0",
+          "ptuuid": "5c758acf-1e33-44ae-8ff3-7a0bc8813913",
           "pttype": "gpt",
           "partitions": [
             {
               "start": 2048,
               "size": 204800,
               "type": "C12A7328-F81F-11D2-BA4B-00A0C93EC93B",
-              "uuid": "68B2905B-DF3E-4FB3-80FA-49D1E773AA33",
+              "uuid": "6d74c3da-534c-4b6b-9d87-495570fa3673",
               "filesystem": {
                 "type": "vfat",
                 "uuid": "7B77-95E7",
@@ -3331,10 +3331,10 @@
             {
               "start": 206848,
               "type": "0FC63DAF-8483-4772-8E79-3D69D8477DE4",
-              "uuid": "6264D520-3FB9-423F-8AB8-7A0A8E3D3562",
+              "uuid": "83049c22-1546-4234-be6d-9bd8930bb9c0",
               "filesystem": {
                 "type": "xfs",
-                "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+                "uuid": "fce341f8-3706-4427-8792-5a4e2ded2888",
                 "label": "root",
                 "mountpoint": "/"
               }
@@ -4045,17 +4045,17 @@
         "bootable": false,
         "fstype": "xfs",
         "label": "root",
-        "partuuid": "6264D520-3FB9-423F-8AB8-7A0A8E3D3562",
+        "partuuid": "48b36240-7dd4-4f83-bd3b-71e359d14ec8",
         "size": 6336527872,
         "start": 105906176,
         "type": "0FC63DAF-8483-4772-8E79-3D69D8477DE4",
-        "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8"
+        "uuid": "fce341f8-3706-4427-8792-5a4e2ded2888"
       },
       {
         "bootable": false,
         "fstype": "vfat",
         "label": null,
-        "partuuid": "68B2905B-DF3E-4FB3-80FA-49D1E773AA33",
+        "partuuid": "deb00129-ebc9-426f-b2fd-eee69c41a249",
         "size": 104857600,
         "start": 1048576,
         "type": "C12A7328-F81F-11D2-BA4B-00A0C93EC93B",

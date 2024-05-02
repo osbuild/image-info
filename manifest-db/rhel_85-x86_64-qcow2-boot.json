@@ -2225,7 +2225,7 @@
             "options": {
               "filesystems": [
                 {
-                  "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+                  "uuid": "7d007736-b69d-4752-ae0a-e755ce492638",
                   "vfs_type": "xfs",
                   "path": "/",
                   "options": "defaults"
@@ -2243,7 +2243,7 @@
           {
             "type": "org.osbuild.grub2",
             "options": {
-              "root_fs_uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "root_fs_uuid": "ed311179-fa87-4f58-aa91-e2d8d30fe29d",
               "kernel_opts": "console=tty0 console=ttyS0,115200n8 no_timer_check net.ifnames=0 crashkernel=auto",
               "legacy": "i386-pc",
               "uefi": {
@@ -2276,26 +2276,26 @@
             "type": "org.osbuild.sfdisk",
             "options": {
               "label": "gpt",
-              "uuid": "D209C89E-EA5E-4FBD-B161-B461CCE297E0",
+              "uuid": "4a103a7d-52fc-474e-bba9-5efa00f9ed4d",
               "partitions": [
                 {
                   "bootable": true,
                   "size": 2048,
                   "start": 2048,
                   "type": "21686148-6449-6E6F-744E-656564454649",
-                  "uuid": "FAC7F1FB-3E8D-4137-A512-961DE09A5549"
+                  "uuid": "e57c1e45-659d-469f-8518-2a9268ba79e1"
                 },
                 {
                   "size": 204800,
                   "start": 4096,
                   "type": "C12A7328-F81F-11D2-BA4B-00A0C93EC93B",
-                  "uuid": "68B2905B-DF3E-4FB3-80FA-49D1E773AA33"
+                  "uuid": "3a4e138d-9d27-4fc2-a7db-8d203bcf3147"
                 },
                 {
                   "size": 20762524,
                   "start": 208896,
                   "type": "0FC63DAF-8483-4772-8E79-3D69D8477DE4",
-                  "uuid": "6264D520-3FB9-423F-8AB8-7A0A8E3D3562"
+                  "uuid": "98423d20-4dc3-4952-8d58-22f5488a4ec5"
                 }
               ]
             },
@@ -2329,7 +2329,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "uuid": "7d007736-b69d-4752-ae0a-e755ce492638",
               "label": "root"
             },
             "devices": {

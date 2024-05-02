@@ -945,7 +945,7 @@
           {
             "type": "org.osbuild.kernel-cmdline",
             "options": {
-              "root_fs_uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "root_fs_uuid": "1825fbc6-f56b-4258-8ccf-4fbc4e8ae70b",
               "kernel_opts": "console=tty0 console=ttyS0,115200n8 no_timer_check net.ifnames=0 crashkernel=auto"
             }
           },
@@ -2442,7 +2442,7 @@
             "options": {
               "filesystems": [
                 {
-                  "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+                  "uuid": "ee1a336e-2a1d-4ef0-920d-d7cf6ff06b78",
                   "vfs_type": "xfs",
                   "path": "/",
                   "options": "defaults"
@@ -2499,7 +2499,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8"
+              "uuid": "ee1a336e-2a1d-4ef0-920d-d7cf6ff06b78"
             },
             "devices": {
               "device": {
@@ -4899,7 +4899,7 @@
         "size": 10736369664,
         "start": 1048576,
         "type": "83",
-        "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8"
+        "uuid": "ee1a336e-2a1d-4ef0-920d-d7cf6ff06b78"
       }
     ],
     "passwd": [

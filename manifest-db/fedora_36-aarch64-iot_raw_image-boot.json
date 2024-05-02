@@ -2095,7 +2095,7 @@
             "options": {
               "filesystems": [
                 {
-                  "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
+                  "uuid": "30cdbb7b-0adf-4845-8d6e-f8617020edc5",
                   "vfs_type": "ext4",
                   "path": "/",
                   "options": "defaults",
@@ -2103,7 +2103,7 @@
                   "passno": 1
                 },
                 {
-                  "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+                  "uuid": "389b97c0-d2dd-4a30-adf4-0282f25bc0be",
                   "vfs_type": "ext4",
                   "path": "/boot",
                   "options": "defaults",
@@ -2197,8 +2197,8 @@
           {
             "type": "org.osbuild.grub2",
             "options": {
-              "root_fs_uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
-              "boot_fs_uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "root_fs_uuid": "02d61570-7256-49fc-bd05-62e239a4928f",
+              "boot_fs_uuid": "8f079269-cf41-43bd-b17f-a16916f86c8e",
               "kernel_opts": "modprobe.blacklist=vc4 rw",
               "uefi": {
                 "vendor": "fedora",
@@ -2305,7 +2305,7 @@
           {
             "type": "org.osbuild.mkfs.ext4",
             "options": {
-              "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "uuid": "389b97c0-d2dd-4a30-adf4-0282f25bc0be",
               "label": "boot"
             },
             "devices": {
@@ -2323,7 +2323,7 @@
           {
             "type": "org.osbuild.mkfs.ext4",
             "options": {
-              "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
+              "uuid": "30cdbb7b-0adf-4845-8d6e-f8617020edc5",
               "label": "root"
             },
             "devices": {

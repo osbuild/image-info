@@ -726,7 +726,7 @@
           {
             "type": "org.osbuild.kernel-cmdline",
             "options": {
-              "root_fs_uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "root_fs_uuid": "0ce3fbc8-cb45-48d6-9e40-d41683a9999c",
               "kernel_opts": "console=tty0 console=ttyS0,115200n8 no_timer_check net.ifnames=0 crashkernel=auto"
             }
           },
@@ -2283,13 +2283,13 @@
             "options": {
               "filesystems": [
                 {
-                  "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+                  "uuid": "e275b025-660f-4157-aa96-d224d5dd9934",
                   "vfs_type": "xfs",
                   "path": "/",
                   "options": "defaults"
                 },
                 {
-                  "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
+                  "uuid": "c9538219-5463-4978-9d0e-6cab9664f1a2",
                   "vfs_type": "xfs",
                   "path": "/opt",
                   "options": "defaults"
@@ -2300,7 +2300,7 @@
           {
             "type": "org.osbuild.grub2",
             "options": {
-              "root_fs_uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "root_fs_uuid": "0ce3fbc8-cb45-48d6-9e40-d41683a9999c",
               "kernel_opts": "console=tty0 console=ttyS0,115200n8 no_timer_check net.ifnames=0 crashkernel=auto debug",
               "legacy": "powerpc-ieee1275",
               "saved_entry": "ffffffffffffffffffffffffffffffff-5.14.0-4.el9.ppc64le",
@@ -2361,7 +2361,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8"
+              "uuid": "e275b025-660f-4157-aa96-d224d5dd9934"
             },
             "devices": {
               "device": {
@@ -2378,7 +2378,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75"
+              "uuid": "c9538219-5463-4978-9d0e-6cab9664f1a2"
             },
             "devices": {
               "device": {
@@ -4823,7 +4823,7 @@
         "size": 10732124160,
         "start": 5242880,
         "type": "83",
-        "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8"
+        "uuid": "e275b025-660f-4157-aa96-d224d5dd9934"
       }
     ],
     "passwd": [

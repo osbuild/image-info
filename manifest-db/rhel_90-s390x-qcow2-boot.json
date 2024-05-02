@@ -1035,7 +1035,7 @@
           {
             "type": "org.osbuild.kernel-cmdline",
             "options": {
-              "root_fs_uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
+              "root_fs_uuid": "7b419d16-2d7d-4971-8b39-8386deab890a",
               "kernel_opts": "console=tty0 console=ttyS0,115200n8 no_timer_check net.ifnames=0"
             }
           },
@@ -2501,13 +2501,13 @@
             "options": {
               "filesystems": [
                 {
-                  "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+                  "uuid": "ae18f614-3c78-4fcd-a394-50047a646b9d",
                   "vfs_type": "xfs",
                   "path": "/boot",
                   "options": "defaults"
                 },
                 {
-                  "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75",
+                  "uuid": "200a0474-f3fa-4b7c-b01d-dcc067963ba6",
                   "vfs_type": "xfs",
                   "path": "/",
                   "options": "defaults"
@@ -2568,7 +2568,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "uuid": "ae18f614-3c78-4fcd-a394-50047a646b9d",
               "label": "boot"
             },
             "devices": {
@@ -2586,7 +2586,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75"
+              "uuid": "200a0474-f3fa-4b7c-b01d-dcc067963ba6"
             },
             "devices": {
               "device": {
@@ -5071,7 +5071,7 @@
         "size": 524288000,
         "start": 1048576,
         "type": "83",
-        "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8"
+        "uuid": "ae18f614-3c78-4fcd-a394-50047a646b9d"
       },
       {
         "bootable": true,
@@ -5081,7 +5081,7 @@
         "size": 10212081664,
         "start": 525336576,
         "type": "83",
-        "uuid": "6e4ff95f-f662-45ee-a82a-bdf44a2d0b75"
+        "uuid": "200a0474-f3fa-4b7c-b01d-dcc067963ba6"
       }
     ],
     "passwd": [

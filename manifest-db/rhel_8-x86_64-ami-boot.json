@@ -3019,7 +3019,7 @@
           "options": {
             "filesystems": [
               {
-                "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+                "uuid": "ed77762c-8a0a-4c35-9a63-ee1a0628a152",
                 "vfs_type": "xfs",
                 "path": "/",
                 "options": "defaults"
@@ -3030,7 +3030,7 @@
         {
           "name": "org.osbuild.grub2",
           "options": {
-            "root_fs_uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+            "root_fs_uuid": "353a3d31-d186-432e-9233-644e189b80c6",
             "kernel_opts": "ro console=ttyS0,115200n8 console=tty0 net.ifnames=0 rd.blacklist=nouveau nvme_core.io_timeout=4294967295 crashkernel=auto",
             "legacy": "i386-pc"
           }
@@ -3068,7 +3068,7 @@
               "bootable": true,
               "filesystem": {
                 "type": "xfs",
-                "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+                "uuid": "ed77762c-8a0a-4c35-9a63-ee1a0628a152",
                 "mountpoint": "/"
               }
             }
@@ -3733,7 +3733,7 @@
         "size": 6441402368,
         "start": 1048576,
         "type": "83",
-        "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd"
+        "uuid": "ed77762c-8a0a-4c35-9a63-ee1a0628a152"
       }
     ],
     "passwd": [

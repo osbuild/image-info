@@ -3415,7 +3415,7 @@
           "options": {
             "filesystems": [
               {
-                "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+                "uuid": "4df387b9-74ee-4607-8051-dc1f98ee7a9e",
                 "vfs_type": "xfs",
                 "path": "/",
                 "options": "defaults"
@@ -3433,7 +3433,7 @@
         {
           "name": "org.osbuild.grub2",
           "options": {
-            "root_fs_uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+            "root_fs_uuid": "49101ae3-ac5f-495a-9ed9-86754bf35cbd",
             "kernel_opts": "console=ttyS0 console=ttyS0,115200n8 no_timer_check crashkernel=auto net.ifnames=0",
             "uefi": {
               "vendor": "redhat"
@@ -3482,7 +3482,7 @@
           "format": "qcow2",
           "filename": "disk.qcow2",
           "size": 4294967296,
-          "ptuuid": "8DFDFF87-C96E-EA48-A3A6-9408F1F6B1EF",
+          "ptuuid": "3a5c83e4-e705-486f-aefc-79b1dc5eb512",
           "pttype": "gpt",
           "partitions": [
             {
@@ -3500,7 +3500,7 @@
               "start": 976896,
               "filesystem": {
                 "type": "xfs",
-                "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+                "uuid": "4df387b9-74ee-4607-8051-dc1f98ee7a9e",
                 "mountpoint": "/"
               }
             }
@@ -4247,7 +4247,7 @@
         "size": 3794779648,
         "start": 500170752,
         "type": "0FC63DAF-8483-4772-8E79-3D69D8477DE4",
-        "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd"
+        "uuid": "4df387b9-74ee-4607-8051-dc1f98ee7a9e"
       },
       {
         "bootable": false,

@@ -9185,7 +9185,7 @@
           {
             "type": "org.osbuild.mkfs.ext4",
             "options": {
-              "uuid": "2fe99653-f7ff-44fd-bea8-fa70107524fb",
+              "uuid": "f70d596b-ccc8-41ac-bbc6-9b2b903f6f80",
               "label": "Anaconda"
             },
             "devices": {

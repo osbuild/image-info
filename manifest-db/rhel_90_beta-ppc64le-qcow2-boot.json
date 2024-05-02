@@ -726,7 +726,7 @@
           {
             "type": "org.osbuild.kernel-cmdline",
             "options": {
-              "root_fs_uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "root_fs_uuid": "010350bd-9416-480f-84cc-9c9e7be029c4",
               "kernel_opts": "console=tty0 console=ttyS0,115200n8 no_timer_check net.ifnames=0 crashkernel=auto"
             }
           },
@@ -2232,7 +2232,7 @@
             "options": {
               "filesystems": [
                 {
-                  "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+                  "uuid": "a93227ba-aa7e-4697-9f00-548b84204fd3",
                   "vfs_type": "xfs",
                   "path": "/",
                   "options": "defaults"
@@ -2243,7 +2243,7 @@
           {
             "type": "org.osbuild.grub2",
             "options": {
-              "root_fs_uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8",
+              "root_fs_uuid": "010350bd-9416-480f-84cc-9c9e7be029c4",
               "kernel_opts": "console=tty0 console=ttyS0,115200n8 no_timer_check net.ifnames=0 crashkernel=auto",
               "legacy": "powerpc-ieee1275",
               "saved_entry": "ffffffffffffffffffffffffffffffff-5.14.0-4.el9.ppc64le",
@@ -2300,7 +2300,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8"
+              "uuid": "a93227ba-aa7e-4697-9f00-548b84204fd3"
             },
             "devices": {
               "device": {
@@ -4694,7 +4694,7 @@
         "size": 10732124160,
         "start": 5242880,
         "type": "83",
-        "uuid": "0194fdc2-fa2f-4cc0-81d3-ff12045b73c8"
+        "uuid": "a93227ba-aa7e-4697-9f00-548b84204fd3"
       }
     ],
     "passwd": [

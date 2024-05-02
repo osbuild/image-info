@@ -5199,7 +5199,7 @@
             "options": {
               "filesystems": [
                 {
-                  "uuid": "4a3096bf-521c-4921-96ab-b0dd0092d180",
+                  "uuid": "fc99abc0-fde3-43af-a9f2-0384bba802e2",
                   "vfs_type": "xfs",
                   "path": "/",
                   "options": "defaults"
@@ -5217,7 +5217,7 @@
           {
             "type": "org.osbuild.grub2",
             "options": {
-              "root_fs_uuid": "4a3096bf-521c-4921-96ab-b0dd0092d180",
+              "root_fs_uuid": "ee8adee8-4cb2-464a-9932-8ff06a03aa42",
               "kernel_opts": "ro",
               "uefi": {
                 "vendor": "centos"
@@ -5296,19 +5296,19 @@
             "type": "org.osbuild.sfdisk",
             "options": {
               "label": "gpt",
-              "uuid": "D209C89E-EA5E-4FBD-B161-B461CCE297E0",
+              "uuid": "ea1d0e19-90c9-4db7-9518-652e9cd85136",
               "partitions": [
                 {
                   "size": 204800,
                   "start": 2048,
                   "type": "C12A7328-F81F-11D2-BA4B-00A0C93EC93B",
-                  "uuid": "68B2905B-DF3E-4FB3-80FA-49D1E773AA33"
+                  "uuid": "87fa9961-ca10-4ae5-b679-1da1fd778700"
                 },
                 {
                   "size": 6293471,
                   "start": 206848,
                   "type": "0FC63DAF-8483-4772-8E79-3D69D8477DE4",
-                  "uuid": "6264D520-3FB9-423F-8AB8-7A0A8E3D3562"
+                  "uuid": "f4eb04b1-9c08-44e6-a4cd-f8884ea24b53"
                 }
               ]
             },
@@ -5342,7 +5342,7 @@
           {
             "type": "org.osbuild.mkfs.xfs",
             "options": {
-              "uuid": "4a3096bf-521c-4921-96ab-b0dd0092d180",
+              "uuid": "fc99abc0-fde3-43af-a9f2-0384bba802e2",
               "label": "root"
             },
             "devices": {
@@ -7527,17 +7527,17 @@
         "bootable": false,
         "fstype": "xfs",
         "label": "root",
-        "partuuid": "6264D520-3FB9-423F-8AB8-7A0A8E3D3562",
+        "partuuid": "7195412c-8d1d-43b3-9b69-daaf4107186d",
         "size": 3222257152,
         "start": 105906176,
         "type": "0FC63DAF-8483-4772-8E79-3D69D8477DE4",
-        "uuid": "4a3096bf-521c-4921-96ab-b0dd0092d180"
+        "uuid": "fc99abc0-fde3-43af-a9f2-0384bba802e2"
       },
       {
         "bootable": false,
         "fstype": "vfat",
         "label": null,
-        "partuuid": "68B2905B-DF3E-4FB3-80FA-49D1E773AA33",
+        "partuuid": "1af836fd-19d5-43f0-bce1-e11328cf42cd",
         "size": 104857600,
         "start": 1048576,
         "type": "C12A7328-F81F-11D2-BA4B-00A0C93EC93B",

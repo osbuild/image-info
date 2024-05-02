@@ -3703,7 +3703,7 @@
           "options": {
             "filesystems": [
               {
-                "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+                "uuid": "8cd59b4a-7dfa-4cd5-9ff4-9b1e33a43c6f",
                 "vfs_type": "xfs",
                 "path": "/",
                 "options": "defaults"
@@ -3714,7 +3714,7 @@
         {
           "name": "org.osbuild.grub2",
           "options": {
-            "root_fs_uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+            "root_fs_uuid": "cb63ad4c-336d-4d8c-9f46-ed686fbfd1b9",
             "kernel_opts": "console=ttyS0 console=ttyS0,115200n8 no_timer_check crashkernel=auto net.ifnames=0",
             "legacy": "powerpc-ieee1275"
           }
@@ -3778,7 +3778,7 @@
               "start": 10240,
               "filesystem": {
                 "type": "xfs",
-                "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd",
+                "uuid": "8cd59b4a-7dfa-4cd5-9ff4-9b1e33a43c6f",
                 "mountpoint": "/"
               }
             }
@@ -4599,7 +4599,7 @@
         "size": 4289724416,
         "start": 5242880,
         "type": "83",
-        "uuid": "0bd700f8-090f-4556-b797-b340297ea1bd"
+        "uuid": "8cd59b4a-7dfa-4cd5-9ff4-9b1e33a43c6f"
       }
     ],
     "passwd": [

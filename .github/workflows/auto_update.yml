@@ -12,6 +12,13 @@ jobs:
     env:
       TRIGGER_TOKEN: ${{ secrets.TRIGGER_TOKEN }}
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}
+
       - name: Trigger CI
         run: |
-          curl --request POST --form token=$TRIGGER_TOKEN --form ref=main https://gitlab.com/api/v4/projects/36844106/trigger/pipeline
+          COMMIT_HASH=$(git log -1 --format='%H')
+          echo "INFO: commit=$COMMIT_HASH"
+          curl --request POST --form token=$TRIGGER_TOKEN --form ref=$COMMIT_HASH  https://gitlab.com/api/v4/projects/36844106/trigger/pipeline

@@ -136,6 +136,7 @@ def parse_db_ignore(db_ignore_file: Union[str, pathlib.Path]) -> List[str]:
     with open(db_ignore_file, "r", encoding="utf-8") as f:
         return f.read().splitlines()
 
+
 def main():
     parser = argparse.ArgumentParser(description="osbuild image tests")
     parser.add_argument(
@@ -222,7 +223,7 @@ def main():
         else:
             report_import(test, args.verbosity)
 
-    print(f"\n{GREEN}{idx + 1 - len(failures) - len(ignored) }{RESET} tests imported")
+    print(f"\n{GREEN}{idx + 1 - len(failures) - len(ignored)}{RESET} tests imported")
     if ignored:
         print(f"{YELLOW}{len(ignored)}{RESET} ignored")
     if failures:

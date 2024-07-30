@@ -1,9 +1,9 @@
 name: Update DB
 
-on:
+on:  # yamllint disable-line rule:truthy
   workflow_dispatch:
   schedule:
-    - cron: '0 0 1,15 * *' # 1st and 15th of every month
+    - cron: '0 0 1,15 * *'  # 1st and 15th of every month
 
 jobs:
   update_db:
@@ -13,5 +13,7 @@ jobs:
       TRIGGER_TOKEN: ${{ secrets.TRIGGER_TOKEN }}
     steps:
       - name: Trigger CI
+        # yamllint disable rule:line-length
         run: |
           curl --request POST --form token=$TRIGGER_TOKEN --form ref=main https://gitlab.com/api/v4/projects/36844106/trigger/pipeline
+        # yamllint enable rule:line-length

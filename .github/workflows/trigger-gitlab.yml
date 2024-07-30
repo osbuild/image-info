@@ -1,8 +1,9 @@
+# ---
 # inspired by rhinstaller/anaconda
 
 name: Trigger GitLab CI
 
-on:
+on:  # yamllint disable-line rule:truthy
   workflow_run:
     workflows: ["Checks"]
     types: [completed]
@@ -35,6 +36,7 @@ jobs:
           route: GET /repos/${{ github.repository }}/pulls
 
       - name: Checkout branch
+        # yamllint disable rule:line-length
         run: |
           PR_DATA=$(mktemp)
           # use uuid as a file terminator to avoid conflicts with data content
@@ -48,6 +50,7 @@ jobs:
           else
             git checkout ${{ github.event.workflow_run.head_branch }} --
           fi
+        # yamllint enable rule:line-length
 
       - name: Push to gitlab
         run: |

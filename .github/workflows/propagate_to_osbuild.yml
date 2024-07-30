@@ -1,8 +1,8 @@
 name: Propagate update to OSBuild
 
-on:
+on:  # yamllint disable-line rule:truthy
   schedule:
-    - cron: '0 0 5,20 * *' # 5th and 20th of every month
+    - cron: '0 0 5,20 * *'  # 5th and 20th of every month
 
 jobs:
   propagate:
@@ -17,6 +17,7 @@ jobs:
           fetch-depth: 0
 
       - name: Update OSBuild
+        # yamllint disable rule:line-length
         run: |
           # Get the manifest-db HEAD
           MANIFEST_DB_HEAD="${{ github.sha }}"
@@ -37,7 +38,8 @@ jobs:
           fi
 
           # Generate the commit list to integrate in the PR
-          COMMIT_LIST=$(git log --oneline $OLD_REF..$MANIFEST_DB_HEAD | sed 's/.*/- https:\/\/github.com\/osbuild\/manifest-db\/commit\/&/')
+          COMMIT_LIST=$(git log --oneline $OLD_REF..$MANIFEST_DB_HEAD |
+                        sed 's/.*/- https:\/\/github.com\/osbuild\/manifest-db\/commit\/&/')
 
           # login as schutzbot
           cd ../osbuild
@@ -70,3 +72,4 @@ jobs:
                   --body "$PR_BODY" \
                   --repo "osbuild/osbuild" \
                   -r lavocatt
+        # yamllint enable rule:line-length

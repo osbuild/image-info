@@ -75,8 +75,8 @@ class CliReport(Report):
         ms = CliReport.status_map[mstatus]
         ims = CliReport.status_map[istatus]
         print("| ", f"{name}".ljust(self.nwidth), end="| ")
-        print(f"{ms}{self.adjust(mstatus,self.mwidth)}{RESET}", end="| ")
-        print(f"{ims}{self.adjust(istatus,self.iwidth)}{RESET}", end="|\n")
+        print(f"{ms}{self.adjust(mstatus, self.mwidth)}{RESET}", end="| ")
+        print(f"{ims}{self.adjust(istatus, self.iwidth)}{RESET}", end="|\n")
 
         print(f"|-{'-'*(self.nwidth+1)}", end="|-")
         print(f"{'-'*self.mwidth}", end="|-")
@@ -112,6 +112,7 @@ def compare_manifest(obj1, obj2):
     if obj1 != obj2:
         return "updated"
     return "unchanged"
+
 
 def compare_imi(obj1: ImageInfo, obj2: ImageInfo):
     """

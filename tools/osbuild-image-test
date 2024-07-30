@@ -142,7 +142,7 @@ class ImageInfoExec:
         return json.loads(r.stdout.decode("utf-8"))
 
 
-#pylint: disable=too-many-instance-attributes
+# pylint: disable=too-many-instance-attributes
 class TestCase:
     """
     Hosts a test case with its input manifest and desired image-info,

@@ -98,6 +98,7 @@ Image-info-build:
   extends: .terraform
   script:
     - schutzbot/selinux-context.sh
+    # yamllint disable-line rule:line-length
     - tools/import-image-tests manifests manifest-db --manifest-only --db-ignore=db-ignore --filter-with-ci-distros=.gitlab-ci.yml --verbose
     - sudo test/cases/gen_db ${PARALLEL_EXEC}
   rules:
@@ -134,6 +135,7 @@ push-image-info:
   stage: finish
   extends: .terraform
   script:
+    # yamllint disable-line rule:line-length
     - tools/import-image-tests manifests manifest-db --manifest-only --db-ignore=db-ignore --filter-with-ci-distros=.gitlab-ci.yml --verbose
     - rm -r manifests
     - schutzbot/include_image_info.sh

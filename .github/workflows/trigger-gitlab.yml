@@ -36,6 +36,8 @@ jobs:
           route: GET /repos/${{ github.repository }}/pulls
 
       - name: Checkout branch
+        env:
+          BRANCH: ${{ github.event.workflow_run.head_branch }}
         # yamllint disable rule:line-length
         run: |
           PR_DATA=$(mktemp)
@@ -48,7 +50,7 @@ jobs:
           if [ ! -z "$PR" ]; then
             git checkout -b PR-$PR
           else
-            git checkout ${{ github.event.workflow_run.head_branch }} --
+            git checkout "${BRANCH}" --
           fi
         # yamllint enable rule:line-length
 

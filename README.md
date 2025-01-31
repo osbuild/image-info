@@ -1,3 +1,6 @@
+> [!CAUTION]
+> # This repository is no longer maintained
+
 Manifest-db
 =======
 
